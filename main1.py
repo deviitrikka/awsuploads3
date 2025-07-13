@@ -6,7 +6,6 @@ from botocore.exceptions import NoCredentialsError, ClientError
 
 # --- Constants ---
 BUCKET_NAME = "bucketforme9090"
-MAX_FILE_SIZE_MB = 10
 
 # Access secrets
 aws_access_key = st.secrets["AWS_ACCESS_KEY_ID"]
@@ -31,9 +30,9 @@ def log(msg):
     log_messages.append(msg)
     st.session_state.logs = log_messages
 
-def check_file_size(file):
-    size_mb = len(file.getvalue()) / (1024 * 1024)
-    return size_mb <= MAX_FILE_SIZE_MB
+# def check_file_size(file):
+#     size_mb = len(file.getvalue()) / (1024 * 1024)
+#     return size_mb <= MAX_FILE_SIZE_MB
 
 def generate_unique_filename(original_name):
     base, ext = os.path.splitext(original_name)
@@ -59,7 +58,7 @@ def file_exists(filename):
         raise
 
 # --- Streamlit UI ---
-st.title("Upload Two Files to S3 with Conflict Handling")
+st.title("Upload your Files to AWS S3 Bucket")
 files = st.file_uploader("Upload one or more files", key="file1", accept_multiple_files=True)
 
 
