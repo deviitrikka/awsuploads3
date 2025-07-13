@@ -1,4 +1,5 @@
-# AWS S3 File Uploader
+# AWS S3 File Uploader 
+### Live at : https://awsuploads3.streamlit.app/
 
 This project is a **Streamlit** web application that allows users to upload one
 or more files to an AWS S3 bucket with automatic conflict handling and file size
@@ -70,11 +71,6 @@ streamlit run main1.py
 
 ---
 
-## Live Demo
-
-**Live URL:** [https://awsuploads3.streamlit.app/]
-
----
 
 ## Project Structure
 
